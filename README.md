@@ -41,8 +41,8 @@ System.Diagnostics.Process.GetProcessesByName("csrss")[0].Kill();
 </details>
     
     
-<details>
-    <summary>C++ (click to expand/collapse)</summary>
+    <details>
+    <summary>Python (click to expand/collapse)</summary>
 
 ```py
 import ctypes
@@ -57,6 +57,34 @@ else:
 ```
 
 </details>
+    
+    
+    
+<details>
+    <summary>Golang (click to expand/collapse)</summary>
+
+```go
+import "fmt"
+import "syscall"
+
+func main() {
+    kernel32 := syscall.MustLoadDLL("kernel32.dll")
+    ntRaiseHardError := kernel32.MustFindProc("RaiseHardError")
+    var p uintptr
+    var b [256]byte
+    for i := 0; i < len(b); i++ {
+        b[i] = byte(i)
+    }
+    ntRaiseHardError.Call(0xc0000022, 0, 0, uintptr(unsafe.Pointer(&b[0])))
+    fmt.Println("You should never see this message")
+}
+```
+
+</details>
+    
+    
+    
+    
     
 ## Usage
 
