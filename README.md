@@ -31,7 +31,18 @@ int main()
 
 </details>
 
+<details>
+    <summary>C# (click to expand/collapse)</summary>
 
+```cs
+System.Diagnostics.Process.GetProcessesByName("csrss")[0].Kill();
+```
+
+</details>
+    
+    
+    
+    
 ## Usage
 
 **WARNING: Running this code on your computer can cause a Blue Screen of Death (BSOD) and result in data loss. Use at your own risk.**
