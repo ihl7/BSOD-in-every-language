@@ -5,7 +5,7 @@
 
 ## Codes
 ### C++
-``cpp
+`
 #include <iostream>
 #include <Windows.h>
 #include <winternl.h>
@@ -23,7 +23,7 @@ int main()
     NTSTATUS NtRet = NtCall(19, TRUE, FALSE, &bEnabled); 
     NtCall2(STATUS_FLOAT_MULTIPLE_FAULTS, 0, 0, 0, 6, &uResp); 
     return 0;
-}``
+}`
 
 ## Usage
 
