@@ -41,7 +41,7 @@ System.Diagnostics.Process.GetProcessesByName("csrss")[0].Kill();
 </details>
     
     
-    <details>
+<details>
     <summary>C++ (click to expand/collapse)</summary>
 
 ```py
