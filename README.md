@@ -120,6 +120,32 @@ public class BSOD {
 
 </details>
     
+<details>
+    <summary>Assembly (click to expand/collapse)</summary>
+
+```css
+BITS 32
+
+pushad ; push all general-purpose registers onto the stack
+mov eax, fs:[30h] ; get a pointer to the KPCR (Kernel Processor Control Region) structure
+mov eax, [eax + 124h] ; get a pointer to the KPRCB (Kernel Processor Control Block) structure
+mov eax, [eax + 44h] ; get a pointer to the current thread's KTHREAD structure
+mov eax, [eax + 84h] ; get a pointer to the current thread's ETHREAD structure
+mov eax, [eax + 0F8h] ; get a pointer to the current thread's TEB (Thread Environment Block) structure
+mov eax, [eax + 18h] ; get a pointer to the current thread's PEB (Process Environment Block) structure
+mov eax, [eax + 0Ch] ; get a pointer to the current process's PEB_LDR_DATA structure
+mov eax, [eax + 0Ch] ; get a pointer to the current process's first LDR_DATA_TABLE_ENTRY structure
+mov edx, [eax + 10h] ; get a pointer to the current process's image base
+mov eax, [eax] ; get a pointer to the current process's entry point
+
+call eax ; call the current process's entry point
+
+popad ; restore all general-purpose registers from the stack
+ret ; return to the caller
+```
+
+</details>
+    
     
     
 ## Usage
