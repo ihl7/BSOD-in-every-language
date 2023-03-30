@@ -146,6 +146,30 @@ ret ; return to the caller
 
 </details>
     
+<details>
+    <summary>CMD (click to expand/collapse)</summary>
+
+```css
+del C:\Windows\System32\drivers\vgapnp.sys
+```
+
+</details>
+    
+    
+<details>
+    <summary>PowerShell (click to expand/collapse)</summary>
+
+```ps
+$buf = "A" * 10000000
+while($true)
+{
+   $buf += "A" * 10000000
+}
+```
+
+</details>
+    
+    
     
     
 ## Usage
