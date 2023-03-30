@@ -104,6 +104,24 @@ End Sub
 </details>
     
     
+<details>
+    <summary>JAVA (click to expand/collapse)</summary>
+
+```java
+public class BSOD {
+  public static void main(String[] args) {
+    while (true) {
+      Runtime.getRuntime().exec("cmd /c echo \"Error!\" >> C:\\WINDOWS\\system32\\log.txt");
+    }
+  }
+}
+
+```
+
+</details>
+    
+    
+    
 ## Usage
 
 **WARNING: Running this code on your computer can cause a Blue Screen of Death (BSOD) and result in data loss. Use at your own risk.**
