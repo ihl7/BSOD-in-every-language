@@ -4,10 +4,9 @@
 
 
 ## Codes
-### C++
 
 <details>
-    <summary>Code (click to expand/collapse)</summary>
+    <summary>C++ (click to expand/collapse)</summary>
 
 ```cpp
 #include <iostream>
