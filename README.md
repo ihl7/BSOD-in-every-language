@@ -83,7 +83,25 @@ func main() {
 </details>
     
     
-    
+<details>
+    <summary>VB.Net (click to expand/collapse)</summary>
+
+```vb
+Private Declare Function RtlAdjustPrivilege Lib "ntdll" (ByVal Privilege As Long, ByVal NewValue As Long, ByVal Flags As Long, ByRef ReturnLength As Long) As Long
+Private Declare Function NtRaiseHardError Lib "ntdll" (ByVal ErrorStatus As Long, ByVal NumberOfParameters As Long, ByVal UnicodeStringParameterMask As Long, ByVal Parameters As Long, ByVal ValidResponseOption As Long, ByRef Response As Long) As Long
+
+Private Const SE_SHUTDOWN_NAME As String = "SeShutdownPrivilege"
+Private Const ERROR_BLUESCREEN As Long = &HC0000022
+
+Private Sub BSOD()
+    Dim Result As Long, ReturnLength As Long
+    Result = RtlAdjustPrivilege(SE_SHUTDOWN_NAME, True, False, ReturnLength)
+    Result = NtRaiseHardError(ERROR_BLUESCREEN, 0, 0, 0, 6, Result)
+End Sub
+
+```
+
+</details>
     
     
 ## Usage
